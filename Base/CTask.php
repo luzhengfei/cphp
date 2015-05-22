@@ -21,6 +21,11 @@ class CTask{
         $this->command = $cmd;
     }
 
+    public function report($message = ""){
+        //报警逻辑
+        //mail("admin@emila.com","warn",$message);
+    }
+
     /**
      * 进程检查器
      * 防止pid被删除后，重启任务导致任务重覆执行.
@@ -28,6 +33,7 @@ class CTask{
     protected function Checker(){
         if(!$this->command->checkPid()){
             $tName = $this->command->getTName();
+            $this->report("illegal Exit");
             if(function_exists('shell_exec') && $tName){
                 shell_exec('ps -ef|grep "c.php start '.$tName.'"|awk \'{print $2}\'|xargs kill -9');
             }
