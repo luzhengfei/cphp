@@ -7,6 +7,8 @@ php守护进程管理框架
 
 在Tasks目录建立自己的脚本，继承CTask基类。
 例如下方发送短信的worker
+
+
 namespace Tasks;
 
 class SendSms extends \Base\CTask{
