@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: lufei
+ * User: lzf
  * Date: 15/5/21
  * Time: 10:40
  * 工厂类，获取系统组件
